@@ -20,6 +20,7 @@ def get_posts():
     return {"data": "This is your posts"}
 
 @app.post("/posts")
-def create_posts(new_post: Post):
-    print(new_post)
-    return {"data": "new post"}
+def create_posts(post: Post):
+    # print(post) # pydantic model
+    # print(post.dict()) #pydantic model converted to dict
+    return {"data": post}
