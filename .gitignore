@@ -1,3 +1,5 @@
 __pycache__
 /app/main_before*
 .env
+gunicorn.service
+nginx.conf
