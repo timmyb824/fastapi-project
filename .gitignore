@@ -3,3 +3,4 @@ __pycache__
 .env
 gunicorn.service
 nginx.conf
+docker-compose-dev.yml

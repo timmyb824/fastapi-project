@@ -1,0 +1,10 @@
+__pycache__
+/app/main_before*
+.env
+gunicorn.service
+nginx.conf
+docker-compose-dev.yml
+docker-compose-prod.yml
+Dockerfile
+app/calculations.py
+test/
