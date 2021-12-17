@@ -1,9 +1,7 @@
 name: Build and Deploy Code
 
 on:
-  push:
-    branches:
-      - "main"
+  - push
 
 jobs:
   job1:
