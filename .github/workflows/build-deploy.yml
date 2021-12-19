@@ -72,7 +72,7 @@ jobs:
       # - name: Image digest
       #   run: echo ${{ steps.docker_build.outputs.digest }}
 
-# If deploying from scratch
+# If deploying from scratch (see https://remarkablemark.org/blog/2021/03/12/github-actions-deploy-to-heroku/)
 ## pull our github repo
 ## install heroku cli
 ## heroku login
@@ -93,3 +93,15 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
           heroku_email: ${{secrets.HEROKU_EMAIL}}
+
+## Deploy by ssh'ing into server that is running on a cloud provider
+      # - name: deploy to ubuntu server
+      #   uses: appleboy/ssh-action@master
+      #   with:
+      #     host: ${{secrets.PROD_HOST}}
+      #     username: ${{secrets.PROD_USERNAME}}
+      #     password: ${{secrets.PROD_PASSWORD}}
+      #     script: |
+      #       cd app/src
+      #       git pull
+      #       echo ${{secrets.PROD_PASSWORD}} | sudo -S systemctl restart api
