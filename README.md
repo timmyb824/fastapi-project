@@ -5,7 +5,7 @@ This API was developed as part of a course I completed on freecodecamp.org's you
 # Deployment
 ![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge)
 
-The application is currently deployed using Heroku and can be found [here](https://fastapi-timmyb-blog.herokuapp.com/). The swagger docs for the API are available [here](https://fastapi-timmyb-blog.herokuapp.com/docs). If the badge is howing as 'Heroku: Failed' then its likely because I put it in maintenance mode for one reason or another. 
+The application is currently deployed using Heroku and can be found [here](https://fastapi-timmyb-blog.herokuapp.com/). The swagger docs for the API are available [here](https://fastapi-timmyb-blog.herokuapp.com/docs). If the badge is showing as 'Heroku: Failed' then its likely because I put it in maintenance mode for one reason or another. 
 
 By the way, shout out to https://github.com/pussinboots/heroku-badge for the badge!
 
