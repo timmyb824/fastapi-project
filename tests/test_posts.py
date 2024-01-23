@@ -25,7 +25,7 @@ def test_unauthorized_user_get_one_post(client, test_posts):
 
 
 def test_get_one_post_not_exist(authorized_client, test_posts):
-    res = authorized_client.get(f"/posts/88888")
+    res = authorized_client.get("/posts/88888")
     assert res.status_code == 404
 
 
@@ -86,8 +86,7 @@ def test_delete_post_success(authorized_client, test_user, test_posts):
 
 
 def test_delete_post_non_exist(authorized_client, test_user, test_posts):
-    res = authorized_client.delete(
-        f"/posts/8000000")
+    res = authorized_client.delete("/posts/8000000")
 
     assert res.status_code == 404
 
@@ -136,7 +135,6 @@ def test_update_post_non_exist(authorized_client, test_user, test_posts):
         "id": test_posts[3].id
 
     }
-    res = authorized_client.put(
-        f"/posts/8000000", json=data)
+    res = authorized_client.put("/posts/8000000", json=data)
 
     assert res.status_code == 404
