@@ -23,7 +23,7 @@ def create_users(user: schemas.UserCreate, db: Session = Depends(get_db)):
 
 @router.get("/{id}", response_model=schemas.UserOut)
 def get_user(id: int, db: Session = Depends(get_db)):
-    user = db.query(models.User).filter(models.User.id == id).first()
-    if not user:
+    if user := db.query(models.User).filter(models.User.id == id).first():
+        return user
+    else:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail= f"User with id {id} not found")
-    return user
